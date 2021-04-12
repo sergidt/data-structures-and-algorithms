@@ -25,8 +25,13 @@ class Stack<T = any> {
         : this._items[this._pointer];
     }
 
-    previous(): T {
+    undo(): T {
         this._pointer = Math.max(this._pointer - 1, -1);
+        return this.current();
+    }
+
+    redo(): T {
+        this._pointer = Math.min(this._pointer - 1, this._items.length - 1);
         return this.current();
     }
 
