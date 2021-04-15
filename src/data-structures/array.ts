@@ -23,10 +23,10 @@ const numbers = Array.from({ length: LENGTH }, () => Math.round(Math.random() * 
 // Bubble sort
 
 function bubbleSort(arr: Array<number>) {
-    for (var i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
 
         // Last i elements are already in place  
-        for (var j = 0; j < (arr.length - i - 1); j++) {
+        for (let j = 0; j < (arr.length - i - 1); j++) {
 
             // Checking if the item at present iteration 
             // is greater than the next iteration
@@ -44,7 +44,6 @@ function bubbleSort(arr: Array<number>) {
 
 
 // Merge sort
-
 
 function merge(left, right) {
     let sorted = [];
