@@ -140,39 +140,16 @@ export class DoubleLinkedList<T> extends LinkedList<T> {
     super.clear();
     this._tail = undefined;
   }
-
-  toString(): string {
-    const headStr = "head\n  ↓";
-
-    if (this._head == null) {
-      return headStr + "\n NULL";
-    }
-
-    const headElementStr = String(this._head.element);
-    let objString = `${headStr}\n${headElementStr.padStart(
-      4 - headElementStr.length,
-      " "
-    )}`;
-
-    let current = this._head.next;
-
-    for (let i = 1; i < this.size() && current != null; i++) {
-      objString = `${objString} → ${current.element}`;
-      current = current.next;
-    }
-    return objString + " → NULL";
-  }
 }
 
 export function doubleLinkedListTest() {
   const l = new DoubleLinkedList<number>();
-  console.log("Double Linked list:\n", l.toString());
+
   console.log("Double Linked list is empty?", l.isEmpty());
 
   console.log("Pushing value 1");
   l.push(1);
 
-  console.log("Double Linked list:\n", l.toString());
 
   console.log("Pushing value 2");
   l.push(2);
@@ -180,17 +157,14 @@ export function doubleLinkedListTest() {
   console.log("Pushing value 3");
   l.push(3);
 
-  console.log("Double Linked list:\n", l.toString());
 
   console.log("inserting 4 at position 2, between 2 and 3");
 
   l.insert(4, 2);
 
-  console.log("Double Linked list:\n", l.toString());
 
   console.log("removing 3");
 
   l.remove(3);
 
-  console.log("Double Linked list:\n", l.toString());
 }

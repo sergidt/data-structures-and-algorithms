@@ -1,5 +1,6 @@
 import { arrayTest } from './data-structures/array';
 import { doubleLinkedListTest } from './data-structures/double-linked-list';
+import { hastTableTest } from './data-structures/hast-table';
 import { linkedListTest } from './data-structures/linked-list';
 import { queueTest } from './data-structures/queue';
 import { setTest } from './data-structures/set';
@@ -10,7 +11,7 @@ console.clear();
 
 //arrayTest();
 
-arrayExercises();
+//arrayExercises();
 
 //stackTest();
 
@@ -20,6 +21,8 @@ arrayExercises();
 
 //linkedListTest();
 
-doubleLinkedListTest();
+// doubleLinkedListTest();
 
 // Undo redo stack example
+
+hastTableTest();
