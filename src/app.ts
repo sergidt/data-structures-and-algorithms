@@ -1,3 +1,4 @@
+import { ratInAMazeTest } from './algorithms/backtracking/rat-in-a-maze';
 import { arrayTest } from './data-structures/array';
 import { doubleLinkedListTest } from './data-structures/double-linked-list';
 import { hastTableTest } from './data-structures/hast-table';
@@ -25,4 +26,6 @@ console.clear();
 
 // Undo redo stack example
 
-hastTableTest();
+//hastTableTest();
+
+ratInAMazeTest();
