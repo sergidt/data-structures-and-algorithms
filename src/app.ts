@@ -1,4 +1,5 @@
 import { ratInAMazeTest } from './algorithms/backtracking/rat-in-a-maze';
+import { sudokuSolver } from './algorithms/backtracking/sudoku-solver';
 import { arrayTest } from './data-structures/array';
 import { doubleLinkedListTest } from './data-structures/double-linked-list';
 import { hastTableTest } from './data-structures/hast-table';
@@ -28,4 +29,6 @@ console.clear();
 
 //hastTableTest();
 
-ratInAMazeTest();
+// ratInAMazeTest();
+
+sudokuSolver();
