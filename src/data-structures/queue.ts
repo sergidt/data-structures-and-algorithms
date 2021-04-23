@@ -6,9 +6,7 @@ class Queue<T = any>{
     }
 
     dequeue(): T {
-        return this.isEmpty()
-            ? undefined
-            : this._items.shift();
+        return this._items.shift();
     }
 
     peek(): T {

@@ -19,6 +19,8 @@ console.clear();
 
 //queueTest();
 
+// dequeueTest();
+
 //setTest();
 
 //linkedListTest();
