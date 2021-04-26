@@ -1,8 +1,8 @@
-class Queue<T = any>{
+export class Queue<T = any>{
     private _items: Array<T> = [];
 
     enqueue(element: T) {
-        this._items.push(element);
+        this._items = [element, ...this._items];
     }
 
     dequeue(): T {

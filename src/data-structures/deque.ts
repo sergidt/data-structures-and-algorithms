@@ -1,6 +1,10 @@
-class DeQueue<T = any>{
+
+export class DeQueue<T = any>{
     private _items: Array<T> = [];
 
+    constructor(items: Array<T> =  []) {
+        this._items = items;
+    }
 
     addFront(element: T) {
             this._items = [element, ...this._items];
@@ -17,7 +21,6 @@ class DeQueue<T = any>{
     removeBack(): T {
         return this._items.pop();
     }
-
 
     peekFront(): T {
         return this.isEmpty()
@@ -50,15 +53,27 @@ class DeQueue<T = any>{
 
 export function dequeueTest() {
     const q = new DeQueue<number>();
+console.log('DEQUE\n---------------------------');
 
+console.log('Add 1 to back');
     q.addBack(1);
+
+    console.log('Add 2 to front');
     q.addFront(2);
+
+    console.log('Add 3 to back');
     q.addBack(3);
+
+    console.log('Add 4 to front');
     q.addFront(4);
+
+    console.log('items:');
     console.log(q.items());
 
-   console.log(q.peekBack());
+   console.log('Peek back', q.peekBack());
 
-   console.log(q.removeFront());
+   console.log('Remove front', q.removeFront());
+
+   console.log('items:');
    console.log(q.items());
 }

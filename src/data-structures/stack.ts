@@ -11,7 +11,7 @@ function time(f: (...params) => any, params: any) {
     console.log(`${f.name} execution time: ${end.getTime() - init.getTime()} ms`);
 }
 
-class Stack<T = any> {
+export class Stack<T = any> {
     private _items: Array<T> = [];
 
     constructor(private _length: number = 5) {
