@@ -4,6 +4,10 @@ export class BinaryTreeNode<K = any> {
   
     constructor(public data: K) {}
   
+    isLeaf():boolean {
+        return !this.left && !this.right;
+    }
+    
       toString(): string {
           return this.data.toString();
       }

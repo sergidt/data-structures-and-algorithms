@@ -1,7 +1,7 @@
 import { BinaryTreeNode } from "./definitions";
 import { printTree } from "./utils";
 
-export default class BinaryTree<T> {
+export class BinaryTree<T> {
   protected _root: BinaryTreeNode<T>;
 
   get root() {
@@ -13,47 +13,86 @@ export default class BinaryTree<T> {
     else this.insertNode(this._root, data);
   }
 
+  search(data: T) {
+      throw new Error('Search method not implemented!');
+  }
+
   protected insertNode(node: BinaryTreeNode<T>, data: T) {
     if (!node.left) node.left = new BinaryTreeNode(data);
     else if (!node.right) node.right = new BinaryTreeNode(data);
     else this.insertNode(node.left, data);
   }
 
-  inOrderTraverse(callback: Function) {
-    this.inOrderTraverseNode(this._root, callback);
+  inOrderTraverse() {
+      const nodes = [];
+
+    this.inOrderTraverseNode(this._root, nodes);
+    console.log('In Order Traverse:', nodes.map((_: BinaryTreeNode) => _.toString()).join(','));
   }
 
-  private inOrderTraverseNode(node: BinaryTreeNode<T>, callback: Function) {
+  protected inOrderTraverseNode(node: BinaryTreeNode<T>, nodes: Array<BinaryTreeNode>) {
     if (node != null) {
-      this.inOrderTraverseNode(node.left, callback);
-      callback(node.data);
-      this.inOrderTraverseNode(node.right, callback);
+      this.inOrderTraverseNode(node.left, nodes);
+      nodes.push(node);
+      this.inOrderTraverseNode(node.right, nodes);
     }
   }
 
-  preOrderTraverse(callback: Function) {
-    this.preOrderTraverseNode(this._root, callback);
-  }
+  preOrderTraverse() {
+    const nodes = [];
+ 
+    this.preOrderTraverseNode(this._root, nodes);
+    console.log('Pre Order Traverse:', nodes.map((_: BinaryTreeNode) => _.toString()).join(','));
+}
 
-  private preOrderTraverseNode(node: BinaryTreeNode<T>, callback: Function) {
+  protected preOrderTraverseNode(node: BinaryTreeNode<T>, nodes: Array<BinaryTreeNode>) {
     if (node != null) {
-      callback(node.data);
-      this.preOrderTraverseNode(node.left, callback);
-      this.preOrderTraverseNode(node.right, callback);
+        nodes.push(node);
+      this.preOrderTraverseNode(node.left, nodes);
+      this.preOrderTraverseNode(node.right, nodes);
     }
   }
 
-  postOrderTraverse(callback: Function) {
-    this.postOrderTraverseNode(this._root, callback);
-  }
+  postOrderTraverse() {
+    const nodes = [];
+ 
+    this.postOrderTraverseNode(this._root, nodes);
+    console.log('Post Order Traverse:', nodes.map((_: BinaryTreeNode) => _.toString()).join(','));
+}
 
-  private postOrderTraverseNode(node: BinaryTreeNode<T>, callback: Function) {
+  protected postOrderTraverseNode(node: BinaryTreeNode<T>, nodes: Array<BinaryTreeNode>) {
     if (node != null) {
-      this.postOrderTraverseNode(node.left, callback);
-      this.postOrderTraverseNode(node.right, callback);
-      callback(node.data);
+      this.postOrderTraverseNode(node.left, nodes);
+      this.postOrderTraverseNode(node.right, nodes);
+      nodes.push(node);
     }
   }
+
+  levelOrderTraverse() {
+
+    const visited: Set<string> = new Set();
+    const queue: Array<BinaryTreeNode<T>> = [this._root];
+    const order = [this._root];
+    while (queue.length > 0) {
+        // take first element from queued items
+        const node = queue.shift();
+
+        // its edges
+        const destinations: Array<BinaryTreeNode<T>> = [
+            ...(node.left ? [node.left] : []),
+            ...(node.right ? [node.right] : []),
+        ];
+        // treatment for every single edge
+        destinations.forEach(v => {
+            order.push(v);
+            if (!visited.has(v.toString())) {
+                visited.add(v.toString());
+                queue.push(v);
+            }
+        });
+        }
+        console.log('Level Order Traverse:', order.map((_: BinaryTreeNode) => _.toString()).join(','));
+}
 }
 
 
@@ -70,4 +109,9 @@ export function binaryTreeTest() {
   tree.insert("E");
   printTree(tree.root);
   console.log(tree);
+
+  tree.inOrderTraverse();
+  tree.preOrderTraverse();
+  tree.postOrderTraverse();
+  tree.levelOrderTraverse();
 }
