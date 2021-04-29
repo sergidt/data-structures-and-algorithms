@@ -14,11 +14,9 @@ export default class BinaryTree<T> {
   }
 
   protected insertNode(node: BinaryTreeNode<T>, data: T) {
-    console.log("inserting ", node.data);
     if (!node.left) node.left = new BinaryTreeNode(data);
     else if (!node.right) node.right = new BinaryTreeNode(data);
     else this.insertNode(node.left, data);
-    console.log(this);
   }
 
   inOrderTraverse(callback: Function) {
