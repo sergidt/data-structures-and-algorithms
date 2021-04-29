@@ -1,6 +1,7 @@
 import { ratInAMazeTest } from './algorithms/backtracking/rat-in-a-maze';
 import { sudokuSolver } from './algorithms/backtracking/sudoku-solver';
 import { arrayTest } from './data-structures/array';
+import { binaryTreeTest } from './data-structures/binary-tree';
 import { dequeueTest } from './data-structures/dequeue';
 import { doubleLinkedListTest } from './data-structures/double-linked-list';
 import { hastTableTest } from './data-structures/hast-table';
@@ -19,9 +20,9 @@ console.clear();
 //setTest();
 //dequeueTest();
 
-dequeueExercises();
+//dequeueExercises();
 
-queueExercises();
+//queueExercises();
 
 
 //stackTest();
@@ -41,3 +42,5 @@ queueExercises();
 // ratInAMazeTest();
 
 //sudokuSolver();
+
+binaryTreeTest();
