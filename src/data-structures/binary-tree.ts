@@ -13,10 +13,6 @@ export class BinaryTree<T> {
     else this.insertNode(this._root, data);
   }
 
-  search(data: T) {
-      throw new Error('Search method not implemented!');
-  }
-
   protected insertNode(node: BinaryTreeNode<T>, data: T) {
     if (!node.left) node.left = new BinaryTreeNode(data);
     else if (!node.right) node.right = new BinaryTreeNode(data);
@@ -69,7 +65,6 @@ export class BinaryTree<T> {
   }
 
   levelOrderTraverse() {
-
     const visited: Set<string> = new Set();
     const queue: Array<BinaryTreeNode<T>> = [this._root];
     const order = [this._root];
