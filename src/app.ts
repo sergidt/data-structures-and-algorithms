@@ -1,6 +1,7 @@
 import { ratInAMazeTest } from './algorithms/backtracking/rat-in-a-maze';
 import { sudokuSolver } from './algorithms/backtracking/sudoku-solver';
 import { arrayTest } from './data-structures/array';
+import { avlTreeTest } from './data-structures/avl-tree';
 import { binarySearchTreeTest } from './data-structures/binary-search-tree';
 import { binaryTreeTest } from './data-structures/binary-tree';
 import { dequeueTest } from './data-structures/dequeue';
@@ -45,4 +46,6 @@ console.clear();
 //sudokuSolver();
 
 //binaryTreeTest();
-binarySearchTreeTest();
+// binarySearchTreeTest();
+
+avlTreeTest();
