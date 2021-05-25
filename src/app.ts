@@ -7,6 +7,7 @@ import { binaryTreeTest } from './data-structures/binary-tree';
 import { dequeueTest } from './data-structures/dequeue';
 import { doubleLinkedListTest } from './data-structures/double-linked-list';
 import { hastTableTest } from './data-structures/hast-table';
+import { heapTest } from './data-structures/heap';
 import { linkedListTest } from './data-structures/linked-list';
 import { queueTest } from './data-structures/queue';
 import { setTest } from './data-structures/set';
@@ -48,4 +49,6 @@ console.clear();
 //binaryTreeTest();
 // binarySearchTreeTest();
 
-avlTreeTest();
+//avlTreeTest();
+
+heapTest();
