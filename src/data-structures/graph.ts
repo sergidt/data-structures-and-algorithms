@@ -1,4 +1,5 @@
 import { bfs, breadthFirstSearch } from "../algorithms/graphs/bfs";
+import { depthFirstSearch } from "../algorithms/graphs/dfs";
 
 export default class Graph<K = string | number> {
     private _vertices: Array<K> = [];
@@ -57,7 +58,10 @@ export function graphTest() {
     g.addEdge(3, 4);
     g.addEdge(4, 5);
     console.log('graph', g.toString());
-
+    console.log('BFS');
     breadthFirstSearch(g, 1, console.log);
     console.log(bfs(g, 1));
+
+    console.log('DFS');
+    depthFirstSearch(g, console.log);
 }

@@ -34,7 +34,9 @@ export const breadthFirstSearch = (graph: Graph, startVertex: any, callback: Fun
         queue.enqueue(w);
       }
     }
+    
     color[u] = Colors.BLACK;
+
     if (callback) {
       callback(u);
     }
