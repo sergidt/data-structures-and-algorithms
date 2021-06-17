@@ -1,4 +1,5 @@
 import { sudokuSolver } from './algorithms/backtracking/sudoku-solver';
+import { nQueenBranchAndBound } from './algorithms/branch-and-bound/n-queens';
 
 console.clear();
 
@@ -27,7 +28,7 @@ console.clear();
 
 //ratInAMazeTest();
 
-sudokuSolver();
+//sudokuSolver();
 
 //binaryTreeTest();
 // binarySearchTreeTest();
@@ -37,3 +38,5 @@ sudokuSolver();
 //heapTest();
 
 //graphTest();
+
+nQueenBranchAndBound();
